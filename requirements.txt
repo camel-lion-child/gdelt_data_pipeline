@@ -1,0 +1,16 @@
+pandas
+requests
+duckdb
+jupyter
+matplotlib
+seaborn
+numpy
+scipy
+beautifulsoup4
+lxml
+pytest
+pytest-cov
+black
+flake8
+mypy
+pre-commit
