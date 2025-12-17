@@ -22,25 +22,6 @@ GDELT 2.1 Events API.
 3. Transform data using SQL in DuckDB.
 4. Perform basic analysis.
 
-## Project Structure
-gdelt-data-pipeline/
-│
-├── data/
-│   ├── raw/
-│   └── processed/
-│
-├── notebooks/
-│   ├── 01_ingest_gdelt.ipynb
-│   ├── 02_transform_duckdb.ipynb
-│   └── 03_analysis.ipynb
-│
-├── scripts/
-│   └── fetch_gdelt.py
-│
-├── README.md
-├── requirements.txt
-└── .gitignore
-
 ## Example Analysis
 - Number of events per day.
 - Average sentiment by country.
