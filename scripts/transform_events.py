@@ -66,7 +66,7 @@ def main():
         [OUT_FILE]
     )
 
-    print(f"✅ Saved clean data to {OUT_FILE}")
+    print(f" Saved clean data to {OUT_FILE}")
     con.close()
 
 if __name__ == "__main__":
