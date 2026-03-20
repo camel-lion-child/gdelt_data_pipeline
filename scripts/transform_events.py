@@ -1,6 +1,10 @@
-"""I load raw GDELT event data into DuckDB, clean and deduplicate key fields, then export a structured CSV for downstream analysis.
+"""I load raw GDELT (Global Database of Events, Language & Tone) event data into DuckDB, clean and deduplicate key fields, 
+then export a structured CSV for downstream analysis. GDELT is a global event database that captures real-time geopolitical events 
+and sentiment, which can be used as an alternative data source for macro and market analysis.
 
-Ce script charge des données brutes GDELT dans DuckDB, nettoie et déduplique les champs clés, puis exporte un CSV structuré pour l’analyse."""
+Ce script charge des données brutes GDELT dans DuckDB, nettoie et déduplique les champs clés, puis exporte un CSV structuré pour l’analyse.
+GDELT est une base de données mondiale qui capture des événements géopolitiques et le sentiment en temps réel, 
+utilisée comme source de données alternative pour l’analyse macro et financière."""
 
 import duckdb
 import os
