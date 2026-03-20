@@ -1,13 +1,18 @@
+"""I load raw GDELT event data into DuckDB, clean and deduplicate key fields, then export a structured CSV for downstream analysis.
+
+Ce script charge des données brutes GDELT dans DuckDB, nettoie et déduplique les champs clés, puis exporte un CSV structuré pour l’analyse."""
+
 import duckdb
 import os
 
-DATE_STR = "20250101"
+DATE_STR = "20250101" #date suffix used to identify raw GDELT file
 
+#input raw file, output cleaned file & set up DuckDB database path
 RAW_FILE = f"data/raw/gdelt_events_{DATE_STR}.csv"
 OUT_FILE = f"data/processed/events_clean_{DATE_STR}.csv"
 DB_PATH = "data/gdelt.duckdb"
 
-os.makedirs("data/processed", exist_ok=True)
+os.makedirs("data/processed", exist_ok=True) #ensure process output folder exists
 
 def main():
     con = duckdb.connect(DB_PATH)
@@ -60,14 +65,14 @@ def main():
     WHERE rn = 1
     """)
 
-    # Export
+    # Export final cleaned dataset to csv
     con.execute(
         "COPY events_clean_dedup TO ? (HEADER, DELIMITER ',')",
         [OUT_FILE]
     )
 
     print(f" Saved clean data to {OUT_FILE}")
-    con.close()
+    con.close() #close dataset connection
 
 if __name__ == "__main__":
-    main()
+    main() #entry point: run GDELT cleaning pipeline
